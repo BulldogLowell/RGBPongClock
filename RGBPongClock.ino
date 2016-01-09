@@ -381,7 +381,7 @@ void loop()
   Time.zone(IsDST(Time.day(), Time.month(), Time.weekday()) ? summerOffset : winterOffset);
 #endif
 
-  int Power_Mode = timerEvaluate(clock_on, clock_off, Time.now());  // comment out to skip night time mode
+  int Power_Mode = timerEvaluate(clock_on, clock_off, tmConvert_t(Time.year(), Time.month(), Time.day(), Time.hour(), Time.minute(), Time.second()));  // comment out to skip night time mode
 
   if (Power_Mode == 1)
   {
